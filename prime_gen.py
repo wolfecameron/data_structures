@@ -2,7 +2,8 @@ import time
 import matplotlib.pyplot as plt
 
 
-
+#this algorithm caches prime numbers as it calculates them
+#will be compared to an algorithm that performs the same task without caching results
 class getPrimes_mem:
 
 	
@@ -102,7 +103,7 @@ if __name__ == '__main__':
 	#how many primes are initially stored in primes list
 	INITIAL_SIZE = 50
 
-	raw_input("This program will test the time efficiency of two algorithms that calculated the first *n* prime numbers both normally and using Memoization. Press anything to continue.")
+	raw_input("This program will test the time efficiency of two algorithms that calculated the first *n* prime numbers both normally and using memoization. Press anything to continue.")
 	#this object is only created to record elapsed time of function without memoization
 	prime_obj1 = getPrimes_reg() 
 
@@ -142,11 +143,11 @@ if __name__ == '__main__':
 		memY.append(elapsedTime)
 
 
-
+	#graphs results using pyplot
 	plt.plot(normalX,normalY, color = "red", label = "Normal")
 	plt.plot(normalX,memY, color = "blue", label = "Optimized")
 	plt.xlabel("Number of primes Calculated")
 	plt.ylabel("Runtime")
-	plt.title("Efficiency of Separate Primes Algorithm")
+	plt.title("Efficiency of Different Primes Algorithms")
 	plt.legend()
 	plt.show()
